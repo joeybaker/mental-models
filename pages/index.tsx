@@ -1,9 +1,63 @@
 import React from 'react'
 import styled from 'styled-components'
+import Markdown from 'markdown-to-jsx'
+import data from '../data.js'
+import seedRandom from 'seed-random'
 
-const Title = styled.h1`
-  color: red;
-  font-size: 50px;
+const Box = styled.article`
+  --fontSize-min: 20px;
+  --fontSize-dynamic: 4;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /* fill the height of the screen, but allow for scrolling with min if we have a tiny screen */
+  min-height: 100vh;
+  /* ensure text is easy to scan */
+  max-width: 50ch;
+
+  padding: 1em;
+
+  @media screen and (orientation: portrait) {
+    font-size: calc(1vw * var(--fontSize-dynamic));
+  }
+  @media screen and (orientation: portrait) and (max-width: 400px) {
+    font-size: var(--fontSize-min);
+  }
+
+  @media screen and (orientation: landscape) {
+    font-size: calc(1vh * var(--fontSize-dynamic));
+  }
+  @media screen and (orientation: landscape) and (max-height: 400px) {
+    font-size: var(--fontSize-min);
+  }
 `
 
-export default () => <Title>My page</Title>
+const Title = styled.h2`
+  align-self: start;
+  margin-bottom: calc(var(--golden-ratio) * 0.1em);
+  font-size: 2em;
+`
+
+const Body = styled.p`
+  word-break: break-word;
+`
+
+export default () => {
+  const total = data.length
+  const now = new Date()
+  const date = '' + now.getFullYear() + now.getMonth() + now.getDay()
+  const random = seedRandom(date)()
+  const index = Math.floor(random * total)
+  const item = data[index]
+  return (
+    <Box>
+      <Title>{item.title}</Title>
+      <Body>
+        <Markdown>{item.notes}</Markdown>
+      </Body>
+    </Box>
+  )
+}
