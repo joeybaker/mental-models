@@ -16,6 +16,9 @@ const Box = styled.article`
 
   /* fill the height of the screen, but allow for scrolling with min if we have a tiny screen */
   min-height: 100vh;
+  min-height: -moz-available;
+  min-height: -webkit-fill-available;
+  min-height: fill-available;
 
   padding: 1em;
 
