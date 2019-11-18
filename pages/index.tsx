@@ -6,6 +6,7 @@ import seedRandom from 'seed-random'
 
 const Box = styled.article`
   --fontSize-min: 20px;
+  --fontWidth-max: 50ch;
   --fontSize-dynamic: 4;
 
   display: flex;
@@ -15,8 +16,6 @@ const Box = styled.article`
 
   /* fill the height of the screen, but allow for scrolling with min if we have a tiny screen */
   min-height: 100vh;
-  /* ensure text is easy to scan */
-  max-width: 50ch;
 
   padding: 1em;
 
@@ -36,13 +35,18 @@ const Box = styled.article`
 `
 
 const Title = styled.h2`
-  align-self: start;
   margin-bottom: calc(var(--golden-ratio) * 0.1em);
   font-size: 2em;
+
+  /* ensure text is easy to scan */
+  max-width: var(--fontWidth-max);
 `
 
 const Body = styled.p`
   word-break: break-word;
+
+  /* ensure text is easy to scan */
+  max-width: var(--fontWidth-max);
 `
 
 export default () => {
