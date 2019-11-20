@@ -63,7 +63,7 @@ export default () => {
     <Box>
       <Title>{item.title}</Title>
       <Body>
-        <Markdown>{item.notes}</Markdown>
+        <Markdown key={item.title}>{item.notes}</Markdown>
       </Body>
     </Box>
   )
