@@ -45,7 +45,7 @@ const Title = styled.h2`
   max-width: var(--fontWidth-max);
 `
 
-const Body = styled.p`
+const Body = styled.div`
   word-break: break-word;
 
   /* ensure text is easy to scan */
