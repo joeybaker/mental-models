@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Markdown from 'markdown-to-jsx'
+import Markdown from 'react-markdown'
 import data from '../data.js'
 import seedRandom from 'seed-random'
 
@@ -63,7 +63,7 @@ export default () => {
     <Box>
       <Title>{item.title}</Title>
       <Body>
-        <Markdown key={item.title}>{item.notes}</Markdown>
+        <Markdown source={item.notes} />
       </Body>
     </Box>
   )
