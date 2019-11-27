@@ -11,8 +11,8 @@ type IndexProps = {
 }
 
 const Index: NextPage<IndexProps> = ({ title, notes, id }) => {
-  // update with the id of the shown mental model
   useEffect(() => {
+    // update with the id of the shown mental model
     Router.replace(`/${id}`)
   }, [])
 

@@ -2,6 +2,7 @@ import * as React from 'react'
 import App from 'next/app'
 import { createGlobalStyle } from 'styled-components'
 import Head from 'next/head'
+import LoadingBar from '../components/LoadingBar'
 
 const GlobalStyles = createGlobalStyle`
   * {
@@ -18,6 +19,7 @@ const GlobalStyles = createGlobalStyle`
     --golden-ratio: 1.61803;
     --fontSize-default: 18px;
     --lineHeight-default: var(--golden-ratio);
+    --backgroundColor-loadingBar: rgba(55, 130, 250, .9);
   }
 
   @media(prefers-color-scheme: dark) {
@@ -25,9 +27,10 @@ const GlobalStyles = createGlobalStyle`
       --backgroundColor-default: black;
       --backgroundColor-offset: #222;
       --color-hairline: #555;
-      --color-default: #ccc
+      --color-default: #ccc;
       --color-offset: #999;
       --color-disabled: #444;
+      --backgroundColor-loadingBar: rgba(55, 130, 250, .5);
     }
 
     a {
@@ -74,6 +77,7 @@ export default class Weader extends App {
         <Head>
           <title>Mental Models</title>
         </Head>
+        <LoadingBar />
         <Component {...pageProps} />
       </>
     )
