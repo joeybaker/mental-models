@@ -1,74 +1,42 @@
-import React from 'react'
-import styled from 'styled-components'
-import Markdown from 'react-markdown'
-import data from '../data.js'
+import React, { useEffect } from 'react'
+import axios from 'axios'
+import { NextPage } from 'next'
+import Router from 'next/router'
+import Id from './[id]'
 
-const oneDayMS = 1000 * 60 * 60 * 24
-const getUTCDayOfYear = (now = new Date()) => {
-  const yearStart = new Date(now.getUTCFullYear(), 0, 0)
-  const diffMS = now.valueOf() - yearStart.valueOf()
-  return Math.round(diffMS / oneDayMS)
+type IndexProps = {
+  title: string,
+  notes: string,
+  id: number,
 }
 
-const Box = styled.article`
-  --fontSize-min: 20px;
-  --fontWidth-max: 50ch;
-  --fontSize-dynamic: 4;
+const Index: NextPage<IndexProps> = ({
+  title,
+  notes,
+  id,
+}: {
+  title: string,
+  notes: string,
+  id: number,
+}) => {
+  // update with the id of the shown mental model
+  useEffect(() => {
+    Router.replace(`/${id}`)
+  }, [])
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  /* fill the height of the screen, but allow for scrolling with min if we have a tiny screen */
-  min-height: 100vh;
-  min-height: -moz-available;
-  min-height: -webkit-fill-available;
-  min-height: fill-available;
-
-  padding: 1em;
-
-  @media screen and (orientation: portrait) {
-    font-size: calc(1vw * var(--fontSize-dynamic));
-  }
-  @media screen and (orientation: portrait) and (max-width: 400px) {
-    font-size: var(--fontSize-min);
-  }
-
-  @media screen and (orientation: landscape) {
-    font-size: calc(1vh * var(--fontSize-dynamic));
-  }
-  @media screen and (orientation: landscape) and (max-height: 400px) {
-    font-size: var(--fontSize-min);
-  }
-`
-
-const Title = styled.h2`
-  margin-bottom: calc(var(--golden-ratio) * 0.1em);
-  font-size: 2em;
-
-  /* ensure text is easy to scan */
-  max-width: var(--fontWidth-max);
-`
-
-const Body = styled.div`
-  word-break: break-word;
-
-  /* ensure text is easy to scan */
-  max-width: var(--fontWidth-max);
-`
-
-export default () => {
-  const total = data.length
-  const now = getUTCDayOfYear()
-  const index = Math.round((now * 365) / total)
-  const item = data[index]
-  return (
-    <Box>
-      <Title>{item.title}</Title>
-      <Body>
-        <Markdown source={item.notes} />
-      </Body>
-    </Box>
-  )
+  return <Id title={title} notes={notes} id={id} />
 }
+
+Index.getInitialProps = async ({ req }) => {
+  if (req) {
+    const { serverDefault } = await import('./api/item')
+    return serverDefault()
+  }
+  try {
+    const { data } = await axios.get('/api/item')
+    return data
+  } catch (e) {
+    console.error(e)
+  }
+}
+export default Index
