@@ -19,13 +19,17 @@ const NavButton = styled.a`
   opacity: 0.5;
   color: var(--color-offset);
   font-size: 2rem;
+  will-change: transform;
+  transition: 50ms transform;
 
-  :hover {
+  :hover, :focus {
     opacity: 1;
+    transform: translateY(-0.1em) scale(1.05);
   }
 
   :active {
     opacity: 0.8;
+    transform: translateY(-0.1em) scale(1);
   }
 `
 
@@ -50,10 +54,10 @@ const Id: NextPage<IdProps> = ({ title, notes, id }) => {
       <Thought title={title} notes={notes} />
       <Nav>
         <Link href="/[id]" as={`/${id - 1}`} passHref>
-          <PrevNavButton>←</PrevNavButton>
+          <PrevNavButton rel="previous">←</PrevNavButton>
         </Link>
         <Link href="/[id]" as={`/${id + 1}`} passHref>
-          <NextNavButton>→</NextNavButton>
+          <NextNavButton rel="next">→</NextNavButton>
         </Link>
       </Nav>
     </Container>
