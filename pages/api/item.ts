@@ -29,7 +29,7 @@ const getItemForDayOfYear = (dayOfYear = getUTCDayOfYear()) => {
 export const serverDefault = (
   { id }: { id: number | string | undefined } = { id: undefined },
 ) => {
-  return id != null ? getItem(id) : getItemForDayOfYear()
+  return id != null && id !== '' ? getItem(id) : getItemForDayOfYear()
 }
 
 export default (req: NextApiRequest, res: NextApiResponse) => {
