@@ -2,7 +2,13 @@ import React from 'react'
 import styled from 'styled-components'
 import Markdown from 'react-markdown'
 import data from '../data.js'
-import seedRandom from 'seed-random'
+
+const oneDayMS = 1000 * 60 * 60 * 24
+const getUTCDayOfYear = (now = new Date()) => {
+  const yearStart = new Date(now.getUTCFullYear(), 0, 0)
+  const diffMS = now.valueOf() - yearStart.valueOf()
+  return Math.round(diffMS / oneDayMS)
+}
 
 const Box = styled.article`
   --fontSize-min: 20px;
@@ -54,10 +60,8 @@ const Body = styled.div`
 
 export default () => {
   const total = data.length
-  const now = new Date()
-  const date = '' + now.getUTCFullYear() + now.getUTCMonth() + now.getUTCDay()
-  const random = seedRandom(date)()
-  const index = Math.floor(random * total)
+  const now = getUTCDayOfYear()
+  const index = Math.round((now * 365) / total)
   const item = data[index]
   return (
     <Box>
