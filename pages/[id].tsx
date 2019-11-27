@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-import Thought from './thought'
+import Thought from '../components/thought'
 import { NextPage } from 'next'
 import Link from 'next/link'
 import styled from 'styled-components'
