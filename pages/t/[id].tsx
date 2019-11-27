@@ -14,10 +14,18 @@ const Container = styled.main`
   min-height: fill-available;
 `
 
+const Nav = styled.nav`
+  --opacity-default: 0.3;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`
+
 const NavButton = styled.a`
   padding: 0.5em;
   text-decoration: none;
-  opacity: 0.5;
+  opacity: var(--opacity-default);
   color: var(--color-offset);
   font-size: 2rem;
   will-change: transform;
@@ -38,15 +46,11 @@ const PrevNavButton = styled(NavButton)``
 
 const NextNavButton = styled(NavButton)``
 
-const Nav = styled.nav`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`
-
 const Title = styled.h1`
   font-size: 1rem;
   font-weight: 400;
+
+  opacity: var(--opacity-default);
 `
 
 type IdProps = {
