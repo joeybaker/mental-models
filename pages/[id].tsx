@@ -44,15 +44,7 @@ type IdProps = {
   id: number,
 }
 
-const Id: NextPage<IdProps> = ({
-  title,
-  notes,
-  id,
-}: {
-  title: string,
-  notes: string,
-  id: number,
-}) => {
+const Id: NextPage<IdProps> = ({ title, notes, id }) => {
   return (
     <Container>
       <Thought title={title} notes={notes} />
