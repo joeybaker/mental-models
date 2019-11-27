@@ -13,8 +13,9 @@ const GlobalStyles = createGlobalStyle`
     --backgroundColor-default: white;
     --backgroundColor-offset: #eee;
     --color-hairline: #ccc;
-    --color-default: #000;
+    --color-default: #111;
     --color-offset: #444;
+    --color-accent: #000;
     --color-disabled: #999;
     --golden-ratio: 1.61803;
     --fontSize-default: 18px;
@@ -29,12 +30,19 @@ const GlobalStyles = createGlobalStyle`
       --color-hairline: #555;
       --color-default: #ccc;
       --color-offset: #999;
+      --color-accent: #fff;
       --color-disabled: #444;
       --backgroundColor-loadingBar: rgba(55, 130, 250, .5);
     }
 
     a {
       color: var(--color-default);
+      :hover, :focus {
+        color: var(--color-accent);
+      }
+      :active {
+        color: var(--color-offset);
+      }
     }
 
     img {
