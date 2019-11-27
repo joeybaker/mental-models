@@ -1,6 +1,7 @@
 import * as React from 'react'
 import App from 'next/app'
 import { createGlobalStyle } from 'styled-components'
+import Head from 'next/head'
 
 const GlobalStyles = createGlobalStyle`
   * {
@@ -70,6 +71,9 @@ export default class Weader extends App {
     return (
       <>
         <GlobalStyles />
+        <Head>
+          <title>Mental Models</title>
+        </Head>
         <Component {...pageProps} />
       </>
     )
