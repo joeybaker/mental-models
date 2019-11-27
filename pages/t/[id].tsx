@@ -1,9 +1,10 @@
 import React from 'react'
 import axios from 'axios'
-import Thought from '../components/thought'
+import Thought from '../../components/Thought'
 import { NextPage } from 'next'
 import Link from 'next/link'
 import styled from 'styled-components'
+import Head from 'next/head'
 
 const Container = styled.main`
   display: flex;
@@ -40,6 +41,12 @@ const NextNavButton = styled(NavButton)``
 const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
+  align-items: center;
+`
+
+const Title = styled.h1`
+  font-size: 1rem;
+  font-weight: 400;
 `
 
 type IdProps = {
@@ -51,12 +58,21 @@ type IdProps = {
 const Id: NextPage<IdProps> = ({ title, notes, id }) => {
   return (
     <Container>
+      <Head>
+        <title>{title}</title>
+        <meta property="og:title" content={`${title} Mental Model`} />
+        <meta property="og:url" content={`/${id}`} />
+        <meta property="og:description" content="A new mental model every day." />
+        <meta property="og:site_name" content="Mental Models" />
+        <meta property="og:locale" content="en_US" />
+      </Head>
       <Thought title={title} notes={notes} />
       <Nav>
-        <Link href="/[id]" as={`/${id - 1}`} passHref>
+        <Link href="/t/[id]" as={`/t/${id - 1}`} passHref>
           <PrevNavButton rel="previous">←</PrevNavButton>
         </Link>
-        <Link href="/[id]" as={`/${id + 1}`} passHref>
+        <Title title="A new mental model every day. By Joey Baker.">Mental Models</Title>
+        <Link href="/t/[id]" as={`/t/${id + 1}`} passHref>
           <NextNavButton rel="next">→</NextNavButton>
         </Link>
       </Nav>
@@ -68,7 +84,7 @@ Id.getInitialProps = async ({ req, query }) => {
   const { id } = query
   if (Array.isArray(id)) throw new Error('invalid id')
   if (req) {
-    const { serverDefault } = await import('./api/item')
+    const { serverDefault } = await import('../api/item')
     return serverDefault({ id })
   }
   try {
