@@ -5,6 +5,8 @@ import { NextPage } from 'next'
 import Link from 'next/link'
 import styled from 'styled-components'
 import Head from 'next/head'
+import { useSwipeable } from 'react-swipeable'
+import Router from 'next/router'
 
 const Container = styled.main`
   display: flex;
@@ -59,9 +61,19 @@ type IdProps = {
   id: number,
 }
 
+const navHref = '/t/[id]'
 const Id: NextPage<IdProps> = ({ title, notes, id }) => {
+  const nextUrl = `/t/${id + 1}`
+  const prevUrl = `/t/${id - 1}`
+  const handlers = useSwipeable({
+    onSwipedLeft: () => Router.push(nextUrl),
+    onSwipedRight: () => Router.push(prevUrl),
+    onSwipedDown: () => Router.push(prevUrl),
+    onSwipedUp: () => Router.push(prevUrl),
+  })
+
   return (
-    <Container>
+    <Container {...handlers}>
       <Head>
         <title>{title}</title>
         <meta property="og:title" content={`${title} Mental Model`} />
@@ -72,11 +84,11 @@ const Id: NextPage<IdProps> = ({ title, notes, id }) => {
       </Head>
       <Thought title={title} notes={notes} />
       <Nav>
-        <Link href="/t/[id]" as={`/t/${id - 1}`} passHref>
+        <Link href={navHref} as={prevUrl} passHref>
           <PrevNavButton rel="previous">←</PrevNavButton>
         </Link>
         <Title title="A new mental model every day. By Joey Baker.">Mental Models</Title>
-        <Link href="/t/[id]" as={`/t/${id + 1}`} passHref>
+        <Link href={navHref} as={nextUrl} passHref>
           <NextNavButton rel="next">→</NextNavButton>
         </Link>
       </Nav>
