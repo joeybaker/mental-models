@@ -41,6 +41,7 @@ const Title = styled.h2`
 
 const Body = styled.div`
   word-break: break-word;
+  line-height: 1.5;
 
   /* ensure text is easy to scan */
   max-width: var(--fontWidth-max);
