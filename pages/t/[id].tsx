@@ -100,11 +100,11 @@ Id.getInitialProps = async ({ req, query }) => {
   const { id } = query
   if (Array.isArray(id)) throw new Error('invalid id')
   if (req) {
-    const { serverDefault } = await import('../api/item')
+    const { serverDefault } = await import('../api/thought')
     return serverDefault({ id })
   }
   try {
-    const { data } = await axios.get(`/api/item?id=${id}`)
+    const { data } = await axios.get(`/api/thought?id=${id}`)
     return data
   } catch (e) {
     console.error(e)

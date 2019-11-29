@@ -21,11 +21,11 @@ const Index: NextPage<IndexProps> = ({ title, notes, id }) => {
 
 Index.getInitialProps = async ({ req }) => {
   if (req) {
-    const { serverDefault } = await import('./api/item')
+    const { serverDefault } = await import('./api/thought')
     return serverDefault()
   }
   try {
-    const { data } = await axios.get('/api/item')
+    const { data } = await axios.get('/api/thought')
     return data
   } catch (e) {
     console.error(e)
