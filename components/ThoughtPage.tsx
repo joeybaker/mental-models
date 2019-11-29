@@ -54,14 +54,34 @@ const Title = styled.h1`
   opacity: var(--opacity-default);
 `
 
+const Today = styled.a`
+  align-self: center;
+  padding: 1em;
+  color: var(--color-offset);
+  font-size: 0.8em;
+  text-decoration: none;
+  opacity: 0.5;
+  border-radius: 0 2px 2px 0;
+  transform: translateY(-0.2em);
+  will-change: transform, background-color;
+  transition: transform 100ms, background-color 50ms;
+
+  :hover {
+    background-color: var(--backgroundColor-offset);
+    color: var(--color-default);
+    transform: translateY(0);
+  }
+`
+
 type ThoughtPageProps = {
   title: string,
   notes: string,
   id: number,
+  isToday?: boolean,
 }
 
 const navHref = '/t/[id]'
-const ThoughtPage: NextPage<ThoughtPageProps> = ({ title, notes, id }) => {
+const ThoughtPage: NextPage<ThoughtPageProps> = ({ title, notes, id, isToday }) => {
   const nextUrl = `/t/${id + 1}`
   const prevUrl = `/t/${id - 1}`
   const handlers = useSwipeable({
@@ -81,6 +101,11 @@ const ThoughtPage: NextPage<ThoughtPageProps> = ({ title, notes, id }) => {
         <meta property="og:site_name" content="Mental Models" />
         <meta property="og:locale" content="en_US" />
       </Head>
+      {!isToday &&
+      <Link href="/" passHref>
+        <Today>Today's Thought</Today>
+      </Link>
+      }
       <Thought title={title} notes={notes} />
       <Nav>
         <Link href={navHref} as={prevUrl} passHref>
