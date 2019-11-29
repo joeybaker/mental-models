@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import axios from 'axios'
 import { NextPage } from 'next'
 import Router from 'next/router'
-import Id from './t/[id]'
+import ThoughtPage from '../components/ThoughtPage'
 
 type IndexProps = {
   title: string,
@@ -12,11 +12,12 @@ type IndexProps = {
 
 const Index: NextPage<IndexProps> = ({ title, notes, id }) => {
   useEffect(() => {
+    const href = `/t/${id}`
     // update with the id of the shown mental model
-    Router.replace(`/t/${id}`)
+    Router.replace(href, href, {shallow: true})
   }, [])
 
-  return <Id title={title} notes={notes} id={id} />
+  return <ThoughtPage title={title} notes={notes} id={id} />
 }
 
 Index.getInitialProps = async ({ req }) => {
