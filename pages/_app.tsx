@@ -78,11 +78,17 @@ const GlobalStyles = createGlobalStyle`
   }
 `
 
-const SWR_CONFIG = {
-  fetcher: (u: string) => axios.get(u).then(({ data }) => data),
-}
-
 export default class Weader extends App {
+  state = { isLoading: false }
+
+  fetcher = async (url: string) => {
+    const { data } = await axios.get(url)
+    this.setState({ isLoading: false })
+    return data
+  }
+
+  handleLoadingSlow = () => this.setState({ isLoading: true })
+
   render() {
     const { Component, pageProps } = this.props
     return (
@@ -91,8 +97,14 @@ export default class Weader extends App {
         <Head>
           <title>Mental Models</title>
         </Head>
-        <LoadingBar />
-        <SWRConfig value={SWR_CONFIG}>
+        <LoadingBar isVisible={this.state.isLoading} />
+        <SWRConfig
+          value={{
+            fetcher: this.fetcher,
+            onLoadingSlow: this.handleLoadingSlow,
+            loadingTimeout: 100,
+          }}
+        >
           <Component {...pageProps} />
         </SWRConfig>
       </>

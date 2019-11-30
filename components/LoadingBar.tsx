@@ -15,7 +15,7 @@ const Bar = styled.div`
 // no need to show the bar
 const WAIT_MS = 100
 
-const LoadingBar = () => {
+const LoadingBar = ({ isVisible }: { isVisible?: boolean }) => {
   const [isLoading, setIsLoading] = useState(false)
   useEffect(() => {
     let startTimeout: number | void
@@ -30,10 +30,30 @@ const LoadingBar = () => {
     Router.events.on('routeChangeStart', start)
     Router.events.on('routeChangeComplete', end)
     return () => {
+      if (startTimeout) clearTimeout(startTimeout)
       Router.events.off('routeChangeStart', start)
       Router.events.off('routeChangeComplete', end)
     }
   }, [])
+
+  useEffect(() => {
+    let startTimeout: number | void
+    const start = () => {
+      if (startTimeout) clearTimeout(startTimeout)
+      startTimeout = setTimeout(() => setIsLoading(true), WAIT_MS)
+    }
+    const end = () => {
+      if (startTimeout) startTimeout = clearTimeout(startTimeout)
+      setIsLoading(false)
+    }
+
+    if (isVisible) start()
+    else end()
+
+    return () => {
+      if (startTimeout) clearTimeout(startTimeout)
+    }
+  }, [isVisible])
 
   return isLoading ? <Bar /> : null
 }
