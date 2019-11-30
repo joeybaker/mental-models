@@ -14,7 +14,7 @@ const Index: NextPage<IndexProps> = props => {
     () => (!props.title ? '/api/thought' : null),
     { initialData: props },
   )
-  const isLoading = !data || isValidating
+  const isLoading = !data || (isValidating && !data.title)
   const { title, notes, id } = isLoading ? props : (data as IndexProps)
 
   useEffect(() => {
