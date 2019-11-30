@@ -1,5 +1,4 @@
 import React from 'react'
-import axios from 'axios'
 import useSWR from 'swr'
 import ThoughtPage from '../../components/ThoughtPage'
 import { NextPage } from 'next'
@@ -13,11 +12,10 @@ type IdProps = {
 const Id: NextPage<IdProps> = props => {
   const { data, isValidating } = useSWR(
     () => (!props.title ? '/api/thought?id=' + props.id : null),
-    u => axios.get(u).then(({ data }) => data),
     { initialData: props },
   )
   const isLoading = !data || isValidating
-  const { title, notes, id } = isLoading ? props : data
+  const { title, notes, id } = isLoading ? props : (data as IdProps)
   return (
     <ThoughtPage title={title} notes={notes} id={id} isLoading={isLoading} />
   )

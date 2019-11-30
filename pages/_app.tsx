@@ -3,6 +3,8 @@ import App from 'next/app'
 import { createGlobalStyle } from 'styled-components'
 import Head from 'next/head'
 import LoadingBar from '../components/LoadingBar'
+import axios from 'axios'
+import { SWRConfig } from 'swr'
 
 const GlobalStyles = createGlobalStyle`
   * {
@@ -76,6 +78,10 @@ const GlobalStyles = createGlobalStyle`
   }
 `
 
+const SWR_CONFIG = {
+  fetcher: (u: string) => axios.get(u).then(({ data }) => data),
+}
+
 export default class Weader extends App {
   render() {
     const { Component, pageProps } = this.props
@@ -86,7 +92,9 @@ export default class Weader extends App {
           <title>Mental Models</title>
         </Head>
         <LoadingBar />
-        <Component {...pageProps} />
+        <SWRConfig value={SWR_CONFIG}>
+          <Component {...pageProps} />
+        </SWRConfig>
       </>
     )
   }

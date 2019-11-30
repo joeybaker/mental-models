@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-import axios from 'axios'
 import useSWR from 'swr'
 import { NextPage } from 'next'
 import ThoughtPage from '../components/ThoughtPage'
@@ -13,11 +12,10 @@ type IndexProps = {
 const Index: NextPage<IndexProps> = props => {
   const { data, isValidating } = useSWR(
     () => (!props.title ? '/api/thought' : null),
-    u => axios.get(u).then(({ data }) => data),
     { initialData: props },
   )
   const isLoading = !data || isValidating
-  const { title, notes, id } = isLoading ? props : data
+  const { title, notes, id } = isLoading ? props : (data as IndexProps)
 
   useEffect(() => {
     const href = `/t/${id}`
