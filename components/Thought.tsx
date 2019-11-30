@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css, keyframes } from 'styled-components'
 import Markdown from 'react-markdown'
 
 const Box = styled.article`
@@ -39,6 +39,29 @@ const Title = styled.h2`
   max-width: var(--fontWidth-max);
 `
 
+const pulse = keyframes`
+  0%{
+    opacity: 0.5;
+  }
+  50%{
+    opacity: 0.2;
+  }
+  100%{
+    opacity: 0.5;
+  }
+`
+
+const pulseAnimation = (props: { duration?: string }) =>
+  css`
+    ${pulse} ${props.duration || '2s'} infinite alternate;
+  `
+
+const TitleLoading = styled(Title)`
+  letter-spacing: -0.1em;
+
+  animation: ${pulseAnimation};
+`
+
 const Body = styled.div`
   word-break: break-word;
   line-height: 1.5;
@@ -47,13 +70,40 @@ const Body = styled.div`
   max-width: var(--fontWidth-max);
 `
 
-const Thought = ({ title, notes }: { title: string, notes: string }) => {
+const BodyLoading = styled(Body)`
+  letter-spacing: -0.1em;
+
+  animation: ${pulseAnimation};
+`
+
+const Thought = ({
+  title,
+  notes,
+  isLoading,
+}: {
+  title: string
+  notes: string
+  isLoading?: boolean
+}) => {
   return (
     <Box>
-      <Title>{title}</Title>
-      <Body>
-        <Markdown source={notes} />
-      </Body>
+      {isLoading ? (
+        <TitleLoading>
+          &#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#8199;&emsp;
+          &#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;
+        </TitleLoading>
+      ) : (
+        <Title>{title}</Title>
+      )}
+      {isLoading ? (
+        <BodyLoading>
+          &#9608;&#9608;&#9608;&#9608;&ensp;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&ensp;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&ensp;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&ensp;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&ensp;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&ensp;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&ensp;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&ensp;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&ensp;&#9608;&#9608;&#9608;&#9608;&#9608;&#9608;&ensp;&#9608;&#9608;
+        </BodyLoading>
+      ) : (
+        <Body>
+          <Markdown source={notes} />
+        </Body>
+      )}
     </Box>
   )
 }

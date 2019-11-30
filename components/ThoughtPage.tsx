@@ -79,6 +79,7 @@ type ThoughtPageProps = {
   notes: string
   id: number
   isToday?: boolean
+  isLoading?: boolean
 }
 
 const navHref = '/t/[id]'
@@ -111,12 +112,12 @@ const ThoughtPage: NextPage<ThoughtPageProps> = ({
         <meta property="og:site_name" content="Mental Models" />
         <meta property="og:locale" content="en_US" />
       </Head>
-      <Thought title={title} notes={notes} />
       {!isToday && (
         <Link href="/" passHref>
           <Today>Today's Thought</Today>
         </Link>
       )}
+      <Thought title={title} notes={notes} isLoading={isLoading} />
       <Nav>
         <Link href={navHref} as={prevUrl} passHref>
           <PrevNavButton rel="previous">←</PrevNavButton>
