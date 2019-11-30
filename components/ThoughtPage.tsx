@@ -32,7 +32,8 @@ const NavButton = styled.a`
   will-change: transform;
   transition: 50ms transform;
 
-  :hover, :focus {
+  :hover,
+  :focus {
     opacity: 1;
     transform: translateY(-0.1em) scale(1.05);
   }
@@ -74,14 +75,20 @@ const Today = styled.a`
 `
 
 type ThoughtPageProps = {
-  title: string,
-  notes: string,
-  id: number,
-  isToday?: boolean,
+  title: string
+  notes: string
+  id: number
+  isToday?: boolean
 }
 
 const navHref = '/t/[id]'
-const ThoughtPage: NextPage<ThoughtPageProps> = ({ title, notes, id, isToday }) => {
+const ThoughtPage: NextPage<ThoughtPageProps> = ({
+  title,
+  notes,
+  id,
+  isToday,
+  isLoading,
+}) => {
   const nextUrl = `/t/${id + 1}`
   const prevUrl = `/t/${id - 1}`
   const handlers = useSwipeable({
@@ -97,21 +104,26 @@ const ThoughtPage: NextPage<ThoughtPageProps> = ({ title, notes, id, isToday }) 
         <title>{title}</title>
         <meta property="og:title" content={`${title} Mental Model`} />
         <meta property="og:url" content={`/${id}`} />
-        <meta property="og:description" content="A new mental model every day." />
+        <meta
+          property="og:description"
+          content="A new mental model every day."
+        />
         <meta property="og:site_name" content="Mental Models" />
         <meta property="og:locale" content="en_US" />
       </Head>
-      {!isToday &&
-      <Link href="/" passHref>
-        <Today>Today's Thought</Today>
-      </Link>
-      }
       <Thought title={title} notes={notes} />
+      {!isToday && (
+        <Link href="/" passHref>
+          <Today>Today's Thought</Today>
+        </Link>
+      )}
       <Nav>
         <Link href={navHref} as={prevUrl} passHref>
           <PrevNavButton rel="previous">←</PrevNavButton>
         </Link>
-        <Title title="A new mental model every day. By Joey Baker.">Mental Models</Title>
+        <Title title="A new mental model every day. By Joey Baker.">
+          Mental Models
+        </Title>
         <Link href={navHref} as={nextUrl} passHref>
           <NextNavButton rel="next">→</NextNavButton>
         </Link>

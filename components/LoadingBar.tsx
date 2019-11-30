@@ -18,7 +18,6 @@ const WAIT_MS = 100
 const LoadingBar = () => {
   const [isLoading, setIsLoading] = useState(false)
   useEffect(() => {
-
     let startTimeout: number | void
     const start = () => {
       if (startTimeout) clearTimeout(startTimeout)
