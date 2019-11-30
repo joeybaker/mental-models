@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Thought from './Thought'
 import { NextPage } from 'next'
 import Link from 'next/link'
@@ -6,6 +6,7 @@ import styled from 'styled-components'
 import Head from 'next/head'
 import { useSwipeable } from 'react-swipeable'
 import Router from 'next/router'
+import LoadingContext from '../components/LoadingContext'
 
 const Container = styled.main`
   display: flex;
@@ -79,7 +80,6 @@ type ThoughtPageProps = {
   notes: string
   id: number
   isToday?: boolean
-  isLoading?: boolean
 }
 
 const navHref = '/t/[id]'
@@ -88,7 +88,6 @@ const ThoughtPage: NextPage<ThoughtPageProps> = ({
   notes,
   id,
   isToday,
-  isLoading,
 }) => {
   const nextUrl = `/t/${id + 1}`
   const prevUrl = `/t/${id - 1}`
@@ -98,6 +97,7 @@ const ThoughtPage: NextPage<ThoughtPageProps> = ({
     onSwipedDown: () => Router.push(prevUrl),
     onSwipedUp: () => Router.push(prevUrl),
   })
+  const isLoading = useContext(LoadingContext)
 
   return (
     <Container {...handlers}>

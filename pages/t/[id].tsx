@@ -16,9 +16,7 @@ const Id: NextPage<IdProps> = props => {
   )
   const isLoading = !data || (isValidating && !data.title)
   const { title, notes, id } = isLoading ? props : (data as IdProps)
-  return (
-    <ThoughtPage title={title} notes={notes} id={id} isLoading={isLoading} />
-  )
+  return <ThoughtPage title={title} notes={notes} id={id} />
 }
 
 Id.getInitialProps = async ({ req, query }) => {

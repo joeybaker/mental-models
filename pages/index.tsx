@@ -31,15 +31,7 @@ const Index: NextPage<IndexProps> = props => {
     if (window.history) history.replaceState(null, '', href)
   }, [id])
 
-  return (
-    <ThoughtPage
-      title={title}
-      notes={notes}
-      id={id}
-      isToday
-      isLoading={isLoading}
-    />
-  )
+  return <ThoughtPage title={title} notes={notes} id={id} isToday />
 }
 
 Index.getInitialProps = async ({ req }) => {

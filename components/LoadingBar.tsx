@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
-import Router from 'next/router'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
+import LoadingContext from './LoadingContext'
 
 const Bar = styled.div`
   position: absolute;
@@ -11,49 +11,8 @@ const Bar = styled.div`
   background-color: var(--backgroundColor-loadingBar);
 `
 
-// wait for a bit before showing the bar; if we can do things quickly, there's
-// no need to show the bar
-const WAIT_MS = 100
-
-const LoadingBar = ({ isVisible }: { isVisible?: boolean }) => {
-  const [isLoading, setIsLoading] = useState(false)
-  useEffect(() => {
-    let startTimeout: number | void
-    const start = () => {
-      if (startTimeout) clearTimeout(startTimeout)
-      startTimeout = setTimeout(() => setIsLoading(true), WAIT_MS)
-    }
-    const end = () => {
-      if (startTimeout) startTimeout = clearTimeout(startTimeout)
-      setIsLoading(false)
-    }
-    Router.events.on('routeChangeStart', start)
-    Router.events.on('routeChangeComplete', end)
-    return () => {
-      if (startTimeout) clearTimeout(startTimeout)
-      Router.events.off('routeChangeStart', start)
-      Router.events.off('routeChangeComplete', end)
-    }
-  }, [])
-
-  useEffect(() => {
-    let startTimeout: number | void
-    const start = () => {
-      if (startTimeout) clearTimeout(startTimeout)
-      startTimeout = setTimeout(() => setIsLoading(true), WAIT_MS)
-    }
-    const end = () => {
-      if (startTimeout) startTimeout = clearTimeout(startTimeout)
-      setIsLoading(false)
-    }
-
-    if (isVisible) start()
-    else end()
-
-    return () => {
-      if (startTimeout) clearTimeout(startTimeout)
-    }
-  }, [isVisible])
+const LoadingBar = () => {
+  const isLoading = useContext(LoadingContext)
 
   return isLoading ? <Bar /> : null
 }

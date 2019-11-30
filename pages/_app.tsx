@@ -5,6 +5,8 @@ import Head from 'next/head'
 import LoadingBar from '../components/LoadingBar'
 import axios from 'axios'
 import { SWRConfig } from 'swr'
+import LoadingContext from '../components/LoadingContext'
+import Router from 'next/router'
 
 const GlobalStyles = createGlobalStyle`
   * {
@@ -78,16 +80,54 @@ const GlobalStyles = createGlobalStyle`
   }
 `
 
+// wait for a bit before showing the bar; if we can do things quickly, there's
+// no need to show the bar
+const WAIT_MS = 100
+
 export default class Weader extends App {
   state = { isLoading: false }
+  startTimeout: number | void = undefined
+  loadingCount = 0
 
-  fetcher = async (url: string) => {
-    const { data } = await axios.get(url)
-    this.setState({ isLoading: false })
-    return data
+  componentDidMount() {
+    Router.events.on('routeChangeStart', this.setLoading)
+    Router.events.on('routeChangeComplete', this.unsetLoading)
+    return () => {}
   }
 
-  handleLoadingSlow = () => this.setState({ isLoading: true })
+  componentWillUnmount() {
+    if (this.startTimeout) clearTimeout(this.startTimeout)
+    Router.events.off('routeChangeStart', this.setLoading)
+    Router.events.off('routeChangeComplete', this.unsetLoading)
+  }
+
+  setLoading = () => {
+    ++this.loadingCount
+    if (this.startTimeout) return
+    this.startTimeout = setTimeout(
+      () => this.setState({ isLoading: true }),
+      WAIT_MS,
+    )
+  }
+
+  unsetLoading = () => {
+    --this.loadingCount
+    if (this.loadingCount > 0) return
+    if (this.startTimeout) this.startTimeout = clearTimeout(this.startTimeout)
+    this.setState({ isLoading: false })
+  }
+
+  fetcher = async (url: string) => {
+    // only load this lib on the client; the server doesn't need this
+    const { cacheGet } = await import('swr/esm/config')
+    const cached = cacheGet(url)
+    // bail early; the data will never change
+    if (cached) return cached
+    else this.setLoading()
+    const { data } = await axios.get(url)
+    this.unsetLoading()
+    return data
+  }
 
   render() {
     const { Component, pageProps } = this.props
@@ -97,16 +137,17 @@ export default class Weader extends App {
         <Head>
           <title>Mental Models</title>
         </Head>
-        <LoadingBar isVisible={this.state.isLoading} />
-        <SWRConfig
-          value={{
-            fetcher: this.fetcher,
-            onLoadingSlow: this.handleLoadingSlow,
-            loadingTimeout: 100,
-          }}
-        >
-          <Component {...pageProps} />
-        </SWRConfig>
+        <LoadingContext.Provider value={this.state.isLoading}>
+          <LoadingBar />
+          <SWRConfig
+            value={{
+              fetcher: this.fetcher,
+              loadingTimeout: 100,
+            }}
+          >
+            <Component {...pageProps} />
+          </SWRConfig>
+        </LoadingContext.Provider>
       </>
     )
   }
