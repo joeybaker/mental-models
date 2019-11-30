@@ -17,6 +17,11 @@ const Index: NextPage<IndexProps> = props => {
   const isLoading = !data || (isValidating && !data.title)
   const { title, notes, id } = isLoading ? props : (data as IndexProps)
 
+  // just prime the swr cache
+  useSWR(() => (props.id !== -1 ? '/api/thought?id=' + id : null), {
+    initialData: props,
+  })
+
   useEffect(() => {
     const href = `/t/${id}`
     // update with the id of the shown mental model
