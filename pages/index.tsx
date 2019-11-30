@@ -9,6 +9,12 @@ type IndexProps = {
   id: number
 }
 
+const isServer = typeof window === 'undefined'
+const setCache = async (data: IndexProps) => {
+  if (data.id === -1 || isServer) return
+  const { cacheSet } = await import('swr/esm/config')
+  cacheSet('/api/thought?id=' + data.id, data)
+}
 const Index: NextPage<IndexProps> = props => {
   const { data, isValidating } = useSWR(
     () => (!props.title ? '/api/thought' : null),
@@ -17,10 +23,8 @@ const Index: NextPage<IndexProps> = props => {
   const isLoading = !data || (isValidating && !data.title)
   const { title, notes, id } = isLoading ? props : (data as IndexProps)
 
-  // just prime the swr cache
-  useSWR(() => (props.id !== -1 ? '/api/thought?id=' + id : null), {
-    initialData: props,
-  })
+  // prime the swr cache
+  setCache({ title, notes, id })
 
   useEffect(() => {
     const href = `/t/${id}`
