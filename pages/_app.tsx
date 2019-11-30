@@ -3,7 +3,6 @@ import App from 'next/app'
 import { createGlobalStyle } from 'styled-components'
 import Head from 'next/head'
 import LoadingBar from '../components/LoadingBar'
-import axios from 'axios'
 import { SWRConfig } from 'swr'
 import LoadingContext from '../components/LoadingContext'
 import Router from 'next/router'
@@ -118,11 +117,17 @@ export default class Weader extends App {
   }
 
   fetcher = async (url: string) => {
-    // only load this lib on the client; the server doesn't need this
-    const { cacheGet } = await import('swr/esm/config')
+    // only load these libs on the client; the server doesn't need this
+    const [{ default: axios }, { cacheGet }] = await Promise.all([
+      import('axios'),
+      // the server will crash if trying to load this; it has browser only api
+      import('swr/esm/config'),
+    ])
+
     const cached = cacheGet(url)
     // bail early; the data will never change
     if (cached) return cached
+    // if we're here, we've gotta go get data
     else this.setLoading()
     const { data } = await axios.get(url)
     this.unsetLoading()
