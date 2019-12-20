@@ -1770,11 +1770,11 @@ module.exports = [
   {
     title: 'Regulatory Capture',
     notes:
-      '**Political Failure:** _{Rarely occurs}_ [Regulatory Capture](https://en.wikipedia.org/wiki/Regulatory_capture) — “When a regulatory agency, created to act in the public interest, instead advances the commercial or political concerns of special interest groups that dominate the industry or sector it is charged with regulating.” (related: [Shirky principle](https://en.wikipedia.org/wiki/Clay_Shirky#Shirky_principle) — “Institutions will try to preserve the problem to which they are the solution.”; “Sunlight is the best disinfectant.”)',
+      '**Political Failure:** _{Frequently occurs}_ [Regulatory Capture](https://en.wikipedia.org/wiki/Regulatory_capture) — “When a regulatory agency, created to act in the public interest, instead advances the commercial or political concerns of special interest groups that dominate the industry or sector it is charged with regulating.” (related: [Shirky principle](https://en.wikipedia.org/wiki/Clay_Shirky#Shirky_principle) — “Institutions will try to preserve the problem to which they are the solution.”; “Sunlight is the best disinfectant.”)',
   },
   {
     title: 'Backward chaining',
-    notes: 'working backward from your goal.',
+    notes: '[Backward chaining](https://en.wikipedia.org/wiki/Backward_chaining) working backward from your goal.',
   },
   {
     title: 'Mere exposure effect',
