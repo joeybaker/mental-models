@@ -1784,7 +1784,7 @@ module.exports = [
   {
     title: 'Tribalism',
     notes:
-      'a way of thinking in which people are loyal to their social group above all else.',
+      '[Tribalism](https://en.wikipedia.org/wiki/Tribalism] A way of thinking in which people are loyal to their social group above all else.',
   },
   {
     title: 'Secrets',
