@@ -1823,7 +1823,7 @@ module.exports = [
   },
   {
     title: 'Incentive',
-    notes: 'something that motivates or encourages someone to do something.',
+    notes: '[Incentive](https://en.wikipedia.org/wiki/Incentive) something that motivates or encourages someone to do something; usually via financial, moral, or coercive means.',
   },
   {
     title: 'Shared information bias',
