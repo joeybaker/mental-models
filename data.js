@@ -2130,4 +2130,9 @@ module.exports = [
     notes:
       '[The Cobra Effect](https://nesslabs.com/cobra-effect) when an attempted solution results in unintended consequences. When you ask humans to solve a problem, be careful what you are actually incenting them to do.',
   },
+  {
+    title: 'Macro-mind Thinking',
+    notes:
+      'In the mind state of [macro-mind](https://consciouscompanymedia.com/personal-development/macro-mind-thinking/), there’s no need to focus. In fact, concentration pulls us out of this state. To enter more deeply into the big mind, we need to train the skill of dropping focus altogether, relaxing the mind, letting it roam free, and taking periods of time where the goal isn’t to do anything. The goal is simply to be and see what arises.',
+  },
 ]
