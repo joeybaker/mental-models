@@ -30,11 +30,6 @@ module.exports = [
       '[Moral luck](https://en.wikipedia.org/wiki/Moral_luck) The tendency for people to ascribe greater or lesser moral standing based on the outcome of an event.',
   },
   {
-    title: 'Mere-exposure effect',
-    notes:
-      'a psychological phenomenon by which people tend to develop a preference for things merely because they are familiar with them.',
-  },
-  {
     title: 'Zero-sum thinking',
     notes:
       '[Zero-sum bias](https://en.wikipedia.org/wiki/Zero-sum_thinking) A bias whereby a situation is incorrectly perceived to be like a zero-sum game (i.e., one person gains at the expense of another).',
@@ -1774,7 +1769,7 @@ module.exports = [
   {
     title: 'Mere exposure effect',
     notes:
-      '[Mere exposure effect](https://en.wikipedia.org/wiki/Mere_exposure_effect) The tendency to express undue liking for things merely because of familiarity with them.',
+      '[Mere exposure effect](https://en.wikipedia.org/wiki/Mere_exposure_effect) a psychological phenomenon by which people tend to develop a preference for things merely because they are familiar with them. AKA _the familiarity principle_',
   },
   {
     title: 'Tribalism',
