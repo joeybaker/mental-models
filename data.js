@@ -142,7 +142,7 @@ module.exports = [
   {
     title: 'Bullseye Framework',
     notes:
-      "**Marketing:** _{Frequently occurs}_ [Bullseye Framework](https://medium.com/@yegg/the-bullseye-framework-for-getting-traction-ef49d05bfd7e) — “With nineteen traction channels to consider, figuring out which one to focus on is tough. That's why we've created a simple framework called Bullseye that will help you find _the channel_ that will get you traction.”",
+      "**Marketing:** _{Frequently occurs}_ [Bullseye Framework](https://medium.com/@yegg/the-bullseye-framework-for-getting-traction-ef49d05bfd7e) — “With [nineteen traction channels](https://medium.com/swlh/the-19-channels-you-can-use-to-get-traction-93c762d19339) to consider, figuring out which one to focus on is tough. That's why we've created a simple framework called Bullseye that will help you find _the channel_ that will get you traction.” 1. What's possible, 2. What's probable (CAC, TAM, quality), 3. What's working.",
   },
   {
     title: 'Dunning–Kruger effect',
