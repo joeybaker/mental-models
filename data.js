@@ -25,19 +25,9 @@ module.exports = [
       '[Not invented here](https://en.wikipedia.org/wiki/Not_invented_here) Aversion to contact with or use of products, research, standards, or knowledge developed outside a group. Related to [IKEA effect](https://en.wikipedia.org/wiki/IKEA_effect).',
   },
   {
-    title: 'Loss aversion',
-    notes:
-      'people’s tendency to prefer avoiding losses to acquiring equivalent gains. We are basically more upset about losing $10 than we are happy about finding $10.',
-  },
-  {
     title: 'Moral luck',
     notes:
       '[Moral luck](https://en.wikipedia.org/wiki/Moral_luck) The tendency for people to ascribe greater or lesser moral standing based on the outcome of an event.',
-  },
-  {
-    title: 'Mere-exposure effect',
-    notes:
-      'a psychological phenomenon by which people tend to develop a preference for things merely because they are familiar with them.',
   },
   {
     title: 'Zero-sum thinking',
@@ -82,7 +72,7 @@ module.exports = [
   {
     title: 'Loss Aversion',
     notes:
-      "**Deciding:** _{Rarely occurs}_ [Loss Aversion](https://en.wikipedia.org/wiki/Loss_aversion) — “People's tendency to strongly prefer avoiding losses to acquiring gains.” (related: [diminishing marginal utility](https://en.wikipedia.org/wiki/Marginal_utility#Diminishing_marginal_utility))",
+      "**Deciding:** _{Rarely occurs}_ [Loss Aversion](https://en.wikipedia.org/wiki/Loss_aversion) — “People's tendency to strongly prefer avoiding losses to acquiring gains.” We are basically more upset about losing $10 than we are happy about finding $10. (related: [diminishing marginal utility](https://en.wikipedia.org/wiki/Marginal_utility#Diminishing_marginal_utility))",
   },
   {
     title: 'Strategy vs Tactics',
@@ -1779,7 +1769,7 @@ module.exports = [
   {
     title: 'Mere exposure effect',
     notes:
-      '[Mere exposure effect](https://en.wikipedia.org/wiki/Mere_exposure_effect) The tendency to express undue liking for things merely because of familiarity with them.',
+      '[Mere exposure effect](https://en.wikipedia.org/wiki/Mere_exposure_effect) a psychological phenomenon by which people tend to develop a preference for things merely because they are familiar with them. AKA _the familiarity principle_',
   },
   {
     title: 'Tribalism',
@@ -2044,11 +2034,6 @@ module.exports = [
     title: 'Denomination effect',
     notes:
       '[Denomination effect](https://en.wikipedia.org/wiki/Denomination_effect) The tendency to spend more money when it is denominated in small amounts (e.g., coins) rather than large amounts (e.g., bills).',
-  },
-  {
-    title: 'Loss aversion',
-    notes:
-      '[Loss aversion](https://en.wikipedia.org/wiki/Loss_aversion) The disutility of giving up an object is greater than the utility associated with acquiring it.',
   },
   {
     title: 'Botnet',
