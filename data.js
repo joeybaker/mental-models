@@ -142,7 +142,7 @@ module.exports = [
   {
     title: "Maslow's Hierarchy of Needs",
     notes:
-      "**Managing:** _{Rarely occurs}_ [Maslow's Hierarchy of Needs](https://en.wikipedia.org/wiki/Maslow%27s_hierarchy_of_needs#Criticism) — “Maslow used the terms ‘physiological', ‘safety', ‘belongingness' and ‘love', ‘esteem', ‘self-actualization', and ‘self-transcendence' to describe the pattern that human motivations generally move through… [though there is] little evidence for the ranking of needs that Maslow described or for the existence of a definite hierarchy at all.”",
+      "**Managing:** _{Rarely occurs}_ [Maslow's Hierarchy of Needs](https://en.wikipedia.org/wiki/Maslow%27s_hierarchy_of_needs#Criticism) — A five-tier model of human needs, often depicted as a pyramid, in which needs lower down in the hierarchy must be satisfied before people can attend to needs higher up. In order, the needs are physiological needs, safety needs, love and belonging, esteem, and self-actualization.",
   },
   {
     title: 'Attrition warfare',
@@ -312,7 +312,7 @@ module.exports = [
   {
     title: 'Core Competency',
     notes:
-      "**Strategizing:** _{Frequently occurs}_ [Core Competency](https://en.wikipedia.org/wiki/Core_competency) — “A harmonized combination of multiple resources and skills that distinguish a firm in the marketplace.” (related: [circle of competence](http://www.businessinsider.com/the-circle-of-competence-theory-2013-12) — “you don't have to be an expert on every company, or even many. You only have to be able to evaluate companies within your circle of competence. The size of that circle is not very important; knowing its boundaries, however, is vital.”)",
+      "**Strategizing:** _{Frequently occurs}_ [Core Competency](https://en.wikipedia.org/wiki/Core_competency) — “A harmonized combination of multiple resources and skills that distinguish a firm in the marketplace.” (related: [circle of competence](http://www.businessinsider.com/the-circle-of-competence-theory-2013-12) — “you don't have to be an expert on every company, or even many. You only have to be able to evaluate companies within your circle of competence. The size of that circle is not very important; knowing its boundaries, however, is vital.”) “When you’re the least experienced person in the room, it’s not the time to show off. You don’t yet know what you don’t know – and regardless of your abilities, your experience and your level of authority, there will definitely be something you don’t know.”",
   },
   {
     title: 'Slippery Slope',
@@ -352,7 +352,7 @@ module.exports = [
   {
     title: 'Redundancy',
     notes:
-      'the duplication of critical components of a system with the intention of increasing its reliability. For example, a backup or a fail-safe.',
+      'The duplication of critical components of a system with the intention of increasing its reliability. For example, a backup or a fail-safe.',
   },
   {
     title: 'Coda',
@@ -529,14 +529,9 @@ module.exports = [
       '[Semmelweis reflex](https://en.wikipedia.org/wiki/Semmelweis_reflex) The tendency to reject new evidence that contradicts a paradigm.',
   },
   {
-    title: 'Maslow’s hierarchy of needs',
-    notes:
-      'a five-tier model of human needs, often depicted as a pyramid, in which needs lower down in the hierarchy must be satisfied before people can attend to needs higher up. In order, the needs are physiological needs, safety needs, love and belonging, esteem, and self-actualization.',
-  },
-  {
     title: 'Inversion principle',
     notes:
-      'the process of looking at a problem backward. For example, instead of brainstorming forward ideas, imagine everything that could make your project go terribly wrong.',
+      '[Avoiding stupidity](https://fs.blog/2013/10/inversion/) by the process of looking at a problem backward. For example, instead of brainstorming forward ideas, imagine everything that could make your project go terribly wrong. As applied to astronaut training, “In any field, it’s a plus if you view criticism as potentially helpful advice rather than as a personal attack.”',
   },
   {
     title: 'High-context vs Low-context Culture',
@@ -891,7 +886,7 @@ module.exports = [
   {
     title: 'Economies of Scale',
     notes:
-      '**Strategizing:** _{Rarely occurs}_ [Economies of Scale](https://en.wikipedia.org/wiki/Economies_of_scale) — “The cost advantages that enterprises obtain due to size, output, or scale of operation, with cost per unit of output generally decreasing with increasing scale as fixed costs are spread out over more units of output.”',
+      "**Strategizing:** _{Rarely occurs}_ [Economies of Scale](https://en.wikipedia.org/wiki/Economies_of_scale) — “The cost advantages that enterprises obtain due to size, output, or scale of operation, with cost per unit of output generally decreasing with increasing scale as fixed costs are spread out over more units of output.” People scale differently from economics, which is [why utopia doesn't work](https://fs.blog/2015/12/the-effect-of-scale-on-values/).",
   },
   {
     title: 'Two-sided Market',
@@ -1185,7 +1180,7 @@ module.exports = [
   {
     title: 'Norm of reciprocity',
     notes:
-      'the expectation that we repay in kind what another has done for us.',
+      'The expectation that we repay in kind what another has done for us. “Over the years I’ve learned that investing in other people’s success doesn’t just make them more likely to enjoy working with me. It also improves my own chances of survival and success.”',
   },
   {
     title: "Simpson's Paradox",
@@ -1764,7 +1759,8 @@ module.exports = [
   },
   {
     title: 'Backward chaining',
-    notes: '[Backward chaining](https://en.wikipedia.org/wiki/Backward_chaining) working backward from your goal.',
+    notes:
+      '[Backward chaining](https://en.wikipedia.org/wiki/Backward_chaining) working backward from your goal.',
   },
   {
     title: 'Mere exposure effect',
@@ -1813,7 +1809,8 @@ module.exports = [
   },
   {
     title: 'Incentive',
-    notes: '[Incentive](https://en.wikipedia.org/wiki/Incentive) something that motivates or encourages someone to do something; usually via financial, moral, or coercive means.',
+    notes:
+      '[Incentive](https://en.wikipedia.org/wiki/Incentive) something that motivates or encourages someone to do something; usually via financial, moral, or coercive means.',
   },
   {
     title: 'Shared information bias',
@@ -1828,7 +1825,7 @@ module.exports = [
   {
     title: 'Margin of Safety',
     notes:
-      '**Investing:** _{Rarely occurs}_ [Margin of Safety](https://en.wikipedia.org/wiki/Margin_of_safety_%28financial%29) — “The difference between the intrinsic value of a stock and its market price.”',
+      '**Investing:** _{Rarely occurs}_ [Margin of Safety](https://en.wikipedia.org/wiki/Margin_of_safety_%28financial%29) — “The difference between the intrinsic value of a stock and its market price.” Or, as applied to training to be an astronaut, “Truly being ready means understanding what could go wrong – and having a plan to deal with it.”',
   },
   {
     title: 'Extrinsic incentives bias',
@@ -2119,5 +2116,30 @@ module.exports = [
     title: 'Macro-mind Thinking',
     notes:
       'In the mind state of [macro-mind](https://consciouscompanymedia.com/personal-development/macro-mind-thinking/), there’s no need to focus. In fact, concentration pulls us out of this state. To enter more deeply into the big mind, we need to train the skill of dropping focus altogether, relaxing the mind, letting it roam free, and taking periods of time where the goal isn’t to do anything. The goal is simply to be and see what arises.',
+  },
+  {
+    title: 'Speed vs. Velocity',
+    notes:
+      '[Saying “NO” to the Non-Essential](https://fs.blog/2018/03/speed-velocity/) “Success is feeling good about the work you do throughout the long, unheralded journey that may or may not wind up at the launch pad. You can’t view training solely as a stepping stone to something loftier. It’s got to be an end in itself.”',
+  },
+  {
+    title: 'Cooperation',
+    notes:
+      '“A lot of our training is like this: we learn how to do things that contribute in a very small way to a much larger mission but do absolutely nothing for our own career prospects.”',
+  },
+  {
+    titie: 'Probabilistic Thinking',
+    notes:
+      '[Probabilistic thinking](https://fs.blog/2018/05/probabilistic-thinking/) is essentially trying to estimate, using some tools of math and logic, the likelihood of any specific outcome coming to pass. It is one of the best tools we have to improve the accuracy of our decisions. “If you’re not sure what to be alarmed about, everything is alarming.”',
+  },
+  {
+    title: 'The Red Queen Effect',
+    notes:
+      '[The Red Queen Effect](https://fs.blog/2012/10/the-red-queen-effect/) “It’s obvious that you have to plan for a major life event like a launch. You can’t just wing it. What’s less obvious, perhaps, is that it makes sense to come up with an equally detailed plan for how to adapt afterward.”',
+  },
+  {
+    title: 'The Map Is Not the Territory',
+    notes:
+      '[The Map Is Not the Territory](https://fs.blog/2015/11/map-and-territory/)  If a map were to represent the territory with perfect fidelity, it would no longer be a reduction and thus would no longer be useful to us. “If you start thinking that only your biggest and shiniest moments count, you’re setting yourself up to feel like a failure most of the time.”',
   },
 ]
