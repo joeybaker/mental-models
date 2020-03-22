@@ -12,8 +12,12 @@ const Container = styled.main`
   display: flex;
   flex-direction: column;
 
-  /* fill the height of the screen, but allow for scrolling with min if we have a tiny screen */
-  min-height: fill-available;
+  /* fill the height of the screen, but allow for scrolling with min
+  if we have a tiny screen; this really only works or is necessary on
+  iphones where the chrome changes window height. So, prefer 100vh
+  for non-webkit browsers that don't support fill-available anyway. */
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
 `
 
 const Nav = styled.nav`
