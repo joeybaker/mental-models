@@ -417,7 +417,7 @@ module.exports = [
   {
     title: 'Consequentialism',
     notes:
-      "**Philosophy:** _{Occasionally occurs}_ [Consequentialism](https://en.wikipedia.org/wiki/Consequentialism) — “Holding that the consequences of one's conduct are the ultimate basis for any judgment about the rightness or wrongness of that conduct.” (related: “ends justify the means”)",
+      "**Philosophy:** _{Occasionally occurs}_ [Consequentialism](https://en.wikipedia.org/wiki/Consequentialism) — “Holding that the consequences of one's conduct are the ultimate basis for any judgment about the rightness or wrongness of that conduct. Thus, from a consequentialist standpoint, a morally right act (or omission from acting) is one that will produce a good outcome, or consequence.” (related: “ends justify the means”)",
   },
   {
     title: 'Mutually Assured Destruction',
