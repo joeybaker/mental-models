@@ -436,7 +436,7 @@ module.exports = [
   },
   {
     title: 'Travis Syndrome',
-    notes: 'Overestimating the significance of the present.',
+    notes: 'Overestimating the significance of the present. Frequently comes up when [taking risks](https://goodcasinos.org/7-cognitive-biases-cost-money-gambling/).',
   },
   {
     title: 'Implicit association test',
