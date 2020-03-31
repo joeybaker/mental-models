@@ -150,11 +150,6 @@ module.exports = [
       '**Military:** _{Rarely occurs}_ [Attrition warfare](https://en.wikipedia.org/wiki/Attrition_warfare) — “a military strategy in which a belligerent attempts to win a war by wearing down the enemy to the point of collapse through continuous losses in personnel and material.”',
   },
   {
-    title: 'Normal distribution',
-    notes:
-      'a theory which states that averages of samples of observations of random variables become normally distributed when the number of observations is sufficiently large.',
-  },
-  {
     title: 'Next-in-line effect',
     notes:
       'When taking turns speaking in a group using a predetermined order (e.g. going clockwise around a room, taking numbers, etc) people tend to have diminished recall for the words of the person who spoke immediately before them.',
@@ -461,7 +456,7 @@ module.exports = [
   {
     title: 'Normal Distribution',
     notes:
-      '**Modeling:** _{Frequently occurs}_ [Normal Distribution](https://en.wikipedia.org/wiki/Normal_distribution) — “A very common continuous probability distribution…Physical quantities that are expected to be the sum of many independent processes (such as measurement errors) often have distributions that are nearly normal.” (related: [central limit theorem](https://en.wikipedia.org/wiki/Central_limit_theorem))',
+      '**Modeling:** _{Frequently occurs}_ [Normal Distribution](https://en.wikipedia.org/wiki/Normal_distribution) — A theory which states that averages of samples of observations of random variables become normally distributed when the number of observations is sufficiently large. “A very common continuous probability distribution…Physical quantities that are expected to be the sum of many independent processes (such as measurement errors) often have distributions that are nearly normal.” (related: [central limit theorem](https://en.wikipedia.org/wiki/Central_limit_theorem))',
   },
   {
     title: 'Recency illusion',
