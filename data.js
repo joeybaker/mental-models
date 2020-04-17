@@ -431,7 +431,8 @@ module.exports = [
   },
   {
     title: 'Travis Syndrome',
-    notes: 'Overestimating the significance of the present. Frequently comes up when [taking risks](https://goodcasinos.org/7-cognitive-biases-cost-money-gambling/).',
+    notes:
+      'Overestimating the significance of the present. Frequently comes up when [taking risks](https://goodcasinos.org/7-cognitive-biases-cost-money-gambling/).',
   },
   {
     title: 'Implicit association test',
@@ -2123,7 +2124,7 @@ module.exports = [
       '“A lot of our training is like this: we learn how to do things that contribute in a very small way to a much larger mission but do absolutely nothing for our own career prospects.”',
   },
   {
-    titie: 'Probabilistic Thinking',
+    title: 'Probabilistic Thinking',
     notes:
       '[Probabilistic thinking](https://fs.blog/2018/05/probabilistic-thinking/) is essentially trying to estimate, using some tools of math and logic, the likelihood of any specific outcome coming to pass. It is one of the best tools we have to improve the accuracy of our decisions. “If you’re not sure what to be alarmed about, everything is alarming.”',
   },

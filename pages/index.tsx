@@ -38,7 +38,7 @@ const Index: NextPage<IndexProps> = props => {
   return <ThoughtPage title={title} notes={notes} id={id} isToday />
 }
 
-Index.getInitialProps = async ({ req }) => {
+Index.getInitialProps = async ({ req }): Promise<IndexProps> => {
   if (req) {
     const { serverDefault } = await import('./api/thought')
     return serverDefault()
