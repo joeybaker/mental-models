@@ -582,7 +582,7 @@ module.exports = [
   {
     title: 'Response Bias',
     notes:
-      "**Experimenting:** _{Frequently occurs}_ [Response Bias](https://en.wikipedia.org/wiki/Response_bias) — “A wide range of [cognitive biases](https://en.wikipedia.org/wiki/Cognitive_bias 'Cognitive bias') that influence the responses of participants away from an accurate or truthful response.”",
+      "**Experimenting:** _{Frequently occurs}_ [Response Bias](https://en.wikipedia.org/wiki/Response_bias) — “A wide range of [cognitive biases](https://en.wikipedia.org/wiki/Cognitive_bias 'Cognitive bias') that influence the responses of participants away from an accurate or truthful response. …almost any aspect of an experimental condition may potentially bias a respondent. Examples include the phrasing of questions in surveys, the demeanor of the researcher, the way the experiment is conducted, or the desires of the participant to be a good experimental subject and to provide socially desirable responses may affect the response in some way.”",
   },
   {
     title: 'Stereotyping',
