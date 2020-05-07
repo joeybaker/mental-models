@@ -647,7 +647,7 @@ module.exports = [
   {
     title: 'Lateral Thinking',
     notes:
-      '**Brainstorming:** _Frequently occurs — “Solving problems through an indirect and creative approach, using reasoning that is not immediately obvious and involving ideas that may not be obtainable by using only traditional step-by-step logic.”',
+      '**Brainstorming:** _{Frequently occurs}_ — [Lateral Thinking](https://en.wikipedia.org/wiki/Lateral_thinking) A term first used in the late 60s. “Solving problems through an indirect and creative approach, using reasoning that is not immediately obvious and involving ideas that may not be obtainable by using only traditional step-by-step logic.”',
   },
   {
     title: 'Survivorship Bias',
