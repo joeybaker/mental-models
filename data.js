@@ -812,7 +812,7 @@ module.exports = [
   {
     title: 'First-mover advantage vs First-mover disadvantage',
     notes:
-      '**Competing:** _Rarely occurs vs [First-mover disadvantage ](https://en.wikipedia.org/wiki/First-mover_advantage#First-mover_disadvantages)— “the advantage gained by the initial (“first-moving”) significant occupant of a market segment.” (related: [Why now?](https://pando.com/2013/02/20/sequoias-why-now/))',
+      '**Competing:** _{Rarely occurs}_ “the advantage gained by the initial (“first-moving”) significant occupant of a market segment.” vs [First-mover disadvantage](https://en.wikipedia.org/wiki/First-mover_advantage#First-mover_disadvantages) (related: [Why now?](https://pando.com/2013/02/20/sequoias-why-now/))',
   },
   {
     title: 'Mechanical advantage',
