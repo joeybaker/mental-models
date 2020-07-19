@@ -527,7 +527,7 @@ module.exports = [
   {
     title: 'Inversion principle',
     notes:
-      '[Avoiding stupidity](https://fs.blog/2013/10/inversion/) by the process of looking at a problem backward. For example, instead of brainstorming forward ideas, imagine everything that could make your project go terribly wrong. As applied to astronaut training, “In any field, it’s a plus if you view criticism as potentially helpful advice rather than as a personal attack.”',
+      '[Avoiding stupidity](https://fs.blog/2013/10/inversion/) by the process of looking at a problem backward. Avoiding stupidity is easier than sudden brilliance. For example, instead of brainstorming forward ideas, imagine everything that could make your project go terribly wrong. As applied to astronaut training, “In any field, it’s a plus if you view criticism as potentially helpful advice rather than as a personal attack.” Identify obvious failure points, and steer clear of them.',
   },
   {
     title: 'High-context vs Low-context Culture',
@@ -1012,7 +1012,7 @@ module.exports = [
   {
     title: 'Contrast effect',
     notes:
-      "[Contrast effect](https://en.wikipedia.org/wiki/Contrast_effect) The enhancement or reduction of a certain stimulus' perception when compared with a recently observed, contrasting object.",
+      "[Contrast effect](https://en.wikipedia.org/wiki/Contrast_effect) The enhancement or reduction of a certain stimulus' perception when compared with a recently observed, contrasting object. Example: A rat will adjust its rate of work if stimulated by an effect associated with greater or lesser reward.",
   },
   {
     title: 'Trait ascription bias',
@@ -1566,7 +1566,7 @@ module.exports = [
   {
     title: 'Leverage',
     notes:
-      '**Physics:** _{Occasionally occurs}_ [Leverage](https://en.wikipedia.org/wiki/Mechanical_advantage) — “The force amplification achieved by using a tool, mechanical device or machine system.” (related: [Theory of constraints](https://en.wikipedia.org/wiki/Theory_of_constraints) — “a management paradigm that views any manageable system as being limited in achieving more of its goals by a very small number of constraints.”',
+      '**Physics:** _{Occasionally occurs}_ [Leverage](https://en.wikipedia.org/wiki/Mechanical_advantage) — “The force amplification achieved by using a tool, mechanical device or machine system.” (related: [Theory of constraints](https://en.wikipedia.org/wiki/Theory_of_constraints) — “A system is only as strong as its weakest point. Focus on the bottleneck. Counterintuitively, if you break down the entire system and optimize each component individually, you’ll lower the effectiveness of the system. Optimize the entire system instead.”',
   },
   {
     title: 'Winning Hearts and Minds',
@@ -2138,4 +2138,7 @@ module.exports = [
     notes:
       '[The Map Is Not the Territory](https://fs.blog/2015/11/map-and-territory/)  If a map were to represent the territory with perfect fidelity, it would no longer be a reduction and thus would no longer be useful to us. “If you start thinking that only your biggest and shiniest moments count, you’re setting yourself up to feel like a failure most of the time.”',
   },
+  {
+    title: 'Doublespeak',
+    notes: 'People often say the opposite of what they mean, especially in political language. It allows people to lie while looking like they’re telling the truth. As George Orwell famously wrote in 1984, "War is peace. Freedom is slavery. Ignorance is strength."',
 ]
