@@ -1346,7 +1346,7 @@ module.exports = [
   {
     title: 'Survivorship bias',
     notes:
-      'the logical error of concentrating on the people that made it past some selection process and overlooking those that did not, typically because of their lack of visibility. Happens a lot in entrepreneurship.',
+      '[Surivial Bias](https://en.m.wikipedia.org/wiki/Survivorship_bias) is the logical error of concentrating on the people that made it past some selection process and overlooking those that did not, typically because of their lack of visibility. This can lead to overly optimistic beliefs because failures are ignored. Happens a lot in entrepreneurship.',
   },
   {
     title: 'Bizarreness effect',
