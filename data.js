@@ -1416,7 +1416,7 @@ module.exports = [
   {
     title: 'Illusion of control',
     notes:
-      'the tendency for people to overestimate their ability to control events.',
+      '[The illusion of control](https://en.wikipedia.org/wiki/Illusion_of_control) is a tendency for people to overestimate their ability to control events. e.g. gambling or believing in the paranormal.',
   },
   {
     title: 'Outcome bias',
