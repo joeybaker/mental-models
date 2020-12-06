@@ -2140,5 +2140,6 @@ module.exports = [
   },
   {
     title: 'Doublespeak',
-    notes: 'People often say the opposite of what they mean, especially in political language. It allows people to lie while looking like they’re telling the truth. As George Orwell famously wrote in 1984, "War is peace. Freedom is slavery. Ignorance is strength."',
+    notes: 'People often say the opposite of what they mean, especially in political language. It allows people to lie while looking like they’re telling the truth. As George Orwell famously wrote in 1984, "War is peace. Freedom is slavery. Ignorance is strength."'
+  },
 ]
