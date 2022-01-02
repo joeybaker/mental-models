@@ -2140,6 +2140,52 @@ module.exports = [
   },
   {
     title: 'Doublespeak',
-    notes: 'People often say the opposite of what they mean, especially in political language. It allows people to lie while looking like they’re telling the truth. As George Orwell famously wrote in 1984, "War is peace. Freedom is slavery. Ignorance is strength."'
+    notes:
+      'People often say the opposite of what they mean, especially in political language. It allows people to lie while looking like they’re telling the truth. As George Orwell famously wrote in 1984, "War is peace. Freedom is slavery. Ignorance is strength."',
+  },
+  {
+    title: 'Narrative Laundering',
+    notes:
+      'While money laundering obscures the origin of criminal income, [narrative laundering](https://fsi.stanford.edu/news/potemkin-pages-personas-blog) hides the originators of stories. Mainstream media won’t usually run a false and destructive narrative put out by an extremist group. But stories can slip into public discussion bit by bit, gaining respectability with each retelling, often through opaque intermediaries.',
+  },
+  {
+    title: 'False Equivalence',
+    notes:
+      '[A comparison](https://www.kqed.org/education/531972/false-equivalence-why-its-so-dangerous-above-the-noise) among two or more people, events, or things that share something superficial but basically have nothing important to do with each other; the intent is to diminish the relevance of one element.',
+  },
+  {
+    title: 'Faux Intimacy',
+    notes:
+      'A form of manipulation resulting from the imagined “[parasocial relationships](https://www.huffpost.com/entry/parasocial-relationships-with-celebrities_l_60a56a18e4b0d45b75248115)” people form with movie characters and celebrities. The distantly adored can take advantage of their personal appeal to further their vanity, corruption, or worse—now often goosed by social media, which exacerbates the illusion of intimacy.',
+  },
+  {
+    title: 'Appeal to Misplaced Authority',
+    notes:
+      "Argument that relies on the statements of [someone who isn't the expert](https://www.txstate.edu/philosophy/resources/fallacy-definitions/Irrelevant-Authority.html) they're presented to be.",
+  },
+  {
+    title: 'The Big Lie',
+    notes:
+      'A simple falsehood so bold and repeated so frequently with such blinding power that followers are dissuaded from challenging its absurdity. “People will believe a big lie sooner than a little one,” wrote U.S. intelligence officials in a World War II analysis of Hitler’s personality.',
+  },
+  {
+    title: 'Fearmongering',
+    notes:
+      'Presenting [the idea a threat, harm, or evil](https://owl.excelsior.edu/argument-and-critical-thinking/logical-fallacies/logical-fallacies-appeal-to-fear/) as a reason to do something.',
+  },
+  {
+    title: 'Butterfly Attack',
+    notes:
+      'Bad actors impersonate members of a social group, commonly on social media, to confuse the discourse, inject disinformation, and stoke racism. [The term](https://mediamanipulation.org/definitions/butterfly-attack) refers to butterflies that have evolved to patterns confuse predators.',
+  },
+  {
+    title: 'Data Voids',
+    notes:
+      '[Co-opting phrases people can search for](https://datasociety.net/library/data-voids/) online that have never been uttered before or that rarely garner much attention. These terms are then seeded with misinformation or disinformation. Someone prompted to search for them will be greeted with pages of falsehoods or biased information.',
+  },
+  {
+    title: 'Black Propaganda',
+    notes:
+      'Material fabricated so that it appears to be written or produced by the victims of the propaganda. [PDF](https://www.jstor.org/stable/2086855) e.g. The Protocols of the Elders of Zion is a notoriously fraudulent 1903 work, originally published in Russian, that purported to be written by Jewish people looking to control the world. Courts and scholars labeled it a libelous forgery in the 20th century, but Hitler encountered it and made it a foundation of the Nazis’ big lie against Jewish people.',
   },
 ]
