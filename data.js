@@ -322,7 +322,7 @@ module.exports = [
   {
     title: 'Unforced Error',
     notes:
-      "**Sports:** _{Occasionally occurs}_ [Unforced Error](https://en.wikipedia.org/wiki/Glossary_of_tennis_terms#U) — In tennis, an “error in a service or return shot that cannot be attributed to any factor other than poor judgement and execution by the player; contrasted with a[forced error](https://en.wikipedia.org/wiki/Unforced_error#Forced_error),” “an error caused by an opponent's good play.”",
+      "**Sports:** _{Occasionally occurs}_ [Unforced Error](https://en.wikipedia.org/wiki/Glossary_of_tennis_terms#U) — In tennis, an “error in a service or return shot that cannot be attributed to any factor other than poor judgement and execution by the player; contrasted with a [forced error](https://en.wikipedia.org/wiki/Unforced_error#Forced_error)”—“an error caused by an opponent's good play.”",
   },
   {
     title: 'Levels-of-processing effect',
