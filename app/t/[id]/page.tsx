@@ -2,13 +2,15 @@ import React from 'react'
 import Markdown from 'react-markdown'
 import { getPost } from '@/app/api/thought'
 import styles from './page.module.css'
+import { redirect } from 'next/navigation'
 
 export default function Thought({
   params: { id },
 }: {
   params: { id: string }
 }) {
-  const { title, notes } = getPost({ id })
+  const { title, notes, id: postId } = getPost({ id })
+  if (id !== `${postId}`) redirect(`/t/${postId}`)
 
   return (
     <article className={styles.box}>

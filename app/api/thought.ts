@@ -8,10 +8,11 @@ const getUTCDayOfYear = (now = new Date()) => {
   return Math.round(diffMS / oneDayMS)
 }
 
-const getItem = (id: number | string) => {
+const getItem = (id: number) => {
+  const total = data.length - 1
   let index
-  if (typeof id === 'string') index = parseInt(id, 10)
-  else if (id < 0) index = data.length + id
+  if (id < 0) index = total + id
+  else if (id > total) index = id % total
   else index = id
   return { id: index, ...data[index] }
 }
@@ -32,7 +33,9 @@ const getItemForDayOfYear = (dayOfYear = getUTCDayOfYear()) => {
 export const getPost = (
   { id }: { id: number | string | undefined } = { id: undefined },
 ) => {
-  return id != null && id !== '' ? getItem(id) : getItemForDayOfYear()
+  if (id != null && id !== '') {
+    return getItem(typeof id === 'string' ? parseInt(id, 10) : id)
+  } else return getItemForDayOfYear()
 }
 
 export default function thought(req: NextApiRequest, res: NextApiResponse) {
