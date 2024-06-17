@@ -20,7 +20,12 @@ export default function Nav({ id }: { id: number }) {
 
   return (
     <nav className={styles.nav} {...handlers}>
-      <Link href={prevUrl} className={styles.navButton} rel="previous">
+      <Link
+        href={prevUrl}
+        className={styles.navButton}
+        rel="previous"
+        scroll={false}
+      >
         ←
       </Link>
       <h1
@@ -29,7 +34,12 @@ export default function Nav({ id }: { id: number }) {
       >
         Mental Models
       </h1>
-      <Link href={nextUrl} className={styles.navButton} rel="next">
+      <Link
+        href={nextUrl}
+        className={styles.navButton}
+        rel="next"
+        scroll={false}
+      >
         →
       </Link>
     </nav>
