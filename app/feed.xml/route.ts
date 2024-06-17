@@ -20,9 +20,11 @@ export async function GET(req: NextRequest) {
   })
   const today = getPost()
   const todayIndex = today.id
+  const currentDate = new Date()
   const posts: [any?] = []
   for (let i = 0; i <= 30; i++) {
-    posts.push(getPost({ id: todayIndex + i }))
+    const date = currentDate.setDate(currentDate.getDate() - i)
+    posts.push({ ...getPost({ id: todayIndex - i }), date })
   }
 
   await Promise.all(
@@ -32,7 +34,7 @@ export async function GET(req: NextRequest) {
         description: await markdownToHtml(post.notes),
         url: `${domain}/t/${post.id}`,
         date: post.date,
-        // author: post.author.name,
+        guid: post.id,
       })
     }),
   )
