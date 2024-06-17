@@ -23,7 +23,7 @@ export async function GET(req: NextRequest) {
   const currentDate = new Date()
   const posts: [any?] = []
   for (let i = 0; i <= 30; i++) {
-    const date = currentDate.setDate(currentDate.getDate() - i)
+    const date = new Date().setDate(currentDate.getDate() - i)
     posts.push({ ...getPost({ id: todayIndex - i }), date })
   }
 
