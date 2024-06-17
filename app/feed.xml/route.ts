@@ -39,5 +39,9 @@ export async function GET(req: NextRequest) {
     }),
   )
 
-  return new Response(feed.xml())
+  return new Response(feed.xml(), {
+    headers: {
+      'Content-Type': 'text/xml',
+    },
+  })
 }
