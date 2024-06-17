@@ -1,0 +1,78 @@
+.box {
+  --fontSize-min: 20px;
+  --fontWidth-max: 50ch;
+  --fontSize-dynamic: 4;
+
+  flex: 2 1 auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 1em;
+}
+
+@media screen and (orientation: portrait) {
+  .box {
+    font-size: calc(1vw * var(--fontSize-dynamic));
+  }
+}
+@media screen and (orientation: portrait) and (max-width: 400px) {
+  .box {
+    font-size: var(--fontSize-min);
+  }
+}
+
+@media screen and (orientation: landscape) {
+  .box {
+    font-size: calc(1vh * var(--fontSize-dynamic));
+  }
+}
+@media screen and (orientation: landscape) and (max-height: 400px) {
+  .box {
+    font-size: var(--fontSize-min);
+  }
+}
+
+.title,
+.titleLoading {
+  margin-bottom: calc(var(--golden-ratio) * 0.1em);
+  font-size: 2em;
+
+  /* ensure text is easy to scan */
+  max-width: var(--fontWidth-max);
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+.titleLoading {
+  letter-spacing: -0.1em;
+
+  animation: pulse 2s infinite alternate;
+}
+
+.body,
+.bodyLoading {
+  word-break: break-word;
+  line-height: 1.5;
+
+  /* ensure text is easy to scan */
+  max-width: var(--fontWidth-max);
+}
+
+.bodyLoading {
+  letter-spacing: -0.1em;
+
+  animation: pulse 2s infinite alternate;
+}

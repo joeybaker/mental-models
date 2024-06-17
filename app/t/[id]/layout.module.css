@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  flex-direction: column;
+
+  /* fill the height of the screen, but allow for scrolling with min
+  if we have a tiny screen; this really only works or is necessary on
+  iphones where the chrome changes window height. So, prefer 100vh
+  for non-webkit browsers that don't support fill-available anyway. */
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+}
+
+.title {
+  font-size: 1rem;
+  font-weight: 400;
+
+  opacity: var(--opacity-default);
+}
+
+.today {
+  align-self: center;
+  padding: 1em;
+  color: var(--color-offset);
+  font-size: 0.8em;
+  text-decoration: none;
+  opacity: 0.5;
+  border-radius: 0 2px 2px 0;
+  transform: translateY(-0.2em);
+  will-change: transform, background-color;
+  transition:
+    transform 100ms,
+    background-color 50ms;
+
+  &:hover {
+    background-color: var(--backgroundColor-offset);
+    color: var(--color-default);
+    transform: translateY(0);
+  }
+}

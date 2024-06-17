@@ -9,7 +9,10 @@ const getUTCDayOfYear = (now = new Date()) => {
 }
 
 const getItem = (id: number | string) => {
-  const index = typeof id === 'string' ? parseInt(id, 10) : id
+  let index
+  if (typeof id === 'string') index = parseInt(id, 10)
+  else if (id < 0) index = data.length + id
+  else index = id
   return { id: index, ...data[index] }
 }
 
@@ -26,16 +29,16 @@ const getItemForDayOfYear = (dayOfYear = getUTCDayOfYear()) => {
   return getItem(index)
 }
 
-export const serverDefault = (
+export const getPost = (
   { id }: { id: number | string | undefined } = { id: undefined },
 ) => {
   return id != null && id !== '' ? getItem(id) : getItemForDayOfYear()
 }
 
-export default (req: NextApiRequest, res: NextApiResponse) => {
+export default function thought(req: NextApiRequest, res: NextApiResponse) {
   const { id } = req.query
   if (Array.isArray(id)) return res.status(400)
-  const item = serverDefault({ id })
+  const item = getPost({ id })
   if (!item) return res.status(404).end()
   res.status(200).json(item)
 }

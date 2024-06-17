@@ -1,0 +1,15 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh);
+}
+
+.main h1 {
+  color: var(--color-theme);
+}
+
+.main p {
+  text-align: center;
+}

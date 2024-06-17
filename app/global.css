@@ -1,0 +1,162 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+}
+
+:root {
+  --backgroundColor-default: white;
+  --backgroundColor-fade: #f7f7f7;
+  --backgroundColor-offset: #eee;
+  --color-hairline: #ddd;
+  --color-default: #000;
+  --color-offset: #444;
+  --color-disabled: #999;
+  --color-danger: red;
+  --golden-ratio: 1.61803;
+  --fontSize-default: 18px;
+  --lineHeight-default: var(--golden-ratio);
+  --padding-body-horiz: 2vw;
+  --maxWidth-text-content: min(
+    50ch,
+    calc(100vw - var(--padding-body-horiz) * 2)
+  );
+  --maxWidth-body: calc(
+    var(--maxWidth-text-content) + var(--padding-body-horiz) * 2
+  );
+
+  color-scheme: light dark; /* both supported */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --backgroundColor-default: black;
+    --backgroundColor-fade: #111;
+    --backgroundColor-offset: #222;
+    --color-hairline: #555;
+    --color-default: #eee;
+    --color-offset: #aaa;
+    --color-disabled: #444;
+  }
+
+  img {
+    filter: saturate(0.5) brightness(0.5);
+  }
+
+  img:active {
+    filter: initial;
+  }
+}
+
+@media (prefers-reduced-motion: reduced) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms;
+    animation-iteration-count: 1;
+    transition-duration: 0.01ms;
+    scroll-behavior: auto !important;
+  }
+}
+
+html {
+  font-size: var(--fontSize-default);
+  font-size: clamp(
+    var(--fontSize-default),
+    1.3vw,
+    calc(var(--fontSize-default) * 3)
+  );
+  background: var(--backgroundColor-default);
+  color: var(--color-default);
+  line-height: var(--lineHeight-default);
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+
+  /* System Fonts as used by Medium and WordPress */
+  font-family:
+    -apple-system,
+    -system-ui,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen-Sans,
+    Ubuntu,
+    Cantarell,
+    'Helvetica Neue',
+    sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  min-height: 100vh;
+}
+
+p,
+blockquote,
+ul,
+ol {
+  margin-bottom: calc(var(--fontSize-default) * var(--golden-ratio));
+}
+
+ul ul,
+ol ol {
+  margin-bottom: 0;
+}
+
+blockquote img,
+p img {
+  display: block;
+  margin: 1rem;
+  margin-left: 0;
+  /* don't allow images to overflow the container */
+  max-width: 100%;
+}
+
+a {
+  text-decoration-skip-ink: auto;
+}
+
+/* so that long lines break okay on iPhone */
+a,
+span,
+p {
+  overflow-wrap: break-word;
+}
+
+ul,
+ol {
+  --offset-left: 1ch;
+  padding-left: calc(var(--golden-ratio) * var(--offset-left));
+}
+
+li {
+  margin-bottom: calc(var(--lineHeight-default) * 0.3em);
+}
+
+/* default font size * 100% / dynamic font size = min width of
+   * screen where dynamic font size will actually increase the font
+   * size */
+@media (min-width: calc(1800px /1.3)) {
+  html {
+    font-size: 1.3vw;
+  }
+}
