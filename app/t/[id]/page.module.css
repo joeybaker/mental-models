@@ -11,6 +11,9 @@
   align-items: center;
 
   padding: 1em;
+
+  /* ensure text is easy to scan */
+  max-width: var(--fontWidth-max);
 }
 
 @media screen and (orientation: portrait) {
@@ -37,13 +40,10 @@
 
 .title,
 .titleLoading {
-  margin-bottom: calc(var(--golden-ratio) * 0.1em);
+  margin-bottom: calc(var(--golden-ratio) * 0.2em);
   font-size: calc(var(--golden-ratio) * 1em);
   text-wrap: balance;
-  word-break: break-all;
   line-height: 1.3;
-  /* ensure text is easy to scan */
-  max-width: var(--fontWidth-max);
 }
 
 @keyframes pulse {

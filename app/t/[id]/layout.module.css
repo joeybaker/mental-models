@@ -1,6 +1,7 @@
 .container {
   display: flex;
   flex-direction: column;
+  align-items: center;
 
   /* fill the height of the screen, but allow for scrolling with min
   if we have a tiny screen; this really only works or is necessary on
