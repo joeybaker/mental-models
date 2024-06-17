@@ -2,9 +2,15 @@ import React from 'react'
 import type { Metadata, Viewport } from 'next'
 import './global.css'
 
+const title = 'Mental Models'
 export const metadata: Metadata = {
-  title: 'Mental Models',
+  title,
   description: 'A mental model a day',
+  alternates: {
+    types: {
+      'application/rss+xml': [{ url: '/feed.xml', title }],
+    },
+  },
 }
 
 export const viewport: Viewport = {
