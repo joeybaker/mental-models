@@ -66,8 +66,9 @@
 
 .body,
 .bodyLoading {
+  text-wrap: pretty;
   word-break: break-word;
-  line-height: 1.5;
+  line-height: var(--golden-ratio);
 
   /* ensure text is easy to scan */
   max-width: var(--fontWidth-max);
@@ -80,7 +81,7 @@
 }
 
 .loadingBar {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
