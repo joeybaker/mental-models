@@ -21,6 +21,10 @@ export async function GET(req: NextRequest) {
   const today = getPost()
   const todayIndex = today.id
   const currentDate = new Date()
+  currentDate.setUTCHours(1)
+  currentDate.setUTCMinutes(0)
+  currentDate.setUTCSeconds(0)
+  currentDate.setUTCMilliseconds(0)
   const posts: [any?] = []
   for (let i = 0; i <= 30; i++) {
     const date = new Date().setDate(currentDate.getDate() - i)
