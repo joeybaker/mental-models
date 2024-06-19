@@ -1,4 +1,4 @@
-import { getPost } from '@/app/api/thought'
+import { getPost } from '@/app/api/thought/route'
 import markdownToHtml from '@/lib/markdown-to-html'
 import RSS from 'rss'
 import { metadata } from '@/app/layout'
