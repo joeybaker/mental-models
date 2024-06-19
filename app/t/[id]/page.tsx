@@ -1,6 +1,6 @@
 import React from 'react'
 import Markdown from 'react-markdown'
-import { getPost } from '@/app/api/thought'
+import { getPost } from '@/app/api/thought/route'
 import styles from './page.module.css'
 import { redirect } from 'next/navigation'
 

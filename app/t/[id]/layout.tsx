@@ -1,6 +1,6 @@
 import React from 'react'
 import type { Metadata } from 'next'
-import { getPost } from '@/app/api/thought'
+import { getPost } from '@/app/api/thought/route'
 import Link from 'next/link'
 import styles from './layout.module.css'
 import Nav from './nav'

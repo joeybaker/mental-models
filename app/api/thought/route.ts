@@ -1,5 +1,5 @@
-import { NextApiRequest, NextApiResponse } from 'next'
-import data from '../../data.js'
+import { NextResponse } from 'next/server'
+import data from '@/data.js'
 
 const oneDayMS = 1000 * 60 * 60 * 24
 const getUTCDayOfYear = (now = new Date()) => {
@@ -38,10 +38,13 @@ export const getPost = (
   } else return getItemForDayOfYear()
 }
 
-export default function thought(req: NextApiRequest, res: NextApiResponse) {
-  const { id } = req.query
-  if (Array.isArray(id)) return res.status(400)
-  const item = getPost({ id })
-  if (!item) return res.status(404).end()
-  res.status(200).json(item)
+export async function GET() {
+  const item = getPost()
+  if (item == null) return new NextResponse('Nothing found', { status: 404 })
+  return NextResponse.json(item)
+  // const { id } = req.query
+  // if (Array.isArray(id)) return Response.status(400)
+  // const item = getPost({ id })
+  // if (!item) return res.status(404).json({})
+  // res.status(200).json(item)
 }
