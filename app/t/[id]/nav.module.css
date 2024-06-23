@@ -24,18 +24,17 @@
 
 @media (pointer: fine) {
   .navButton {
-    will-change: transform;
-    transition: 50ms transform;
+    transition: 80ms transform ease-in;
 
     &:hover,
     &:focus {
       opacity: 1;
-      transform: translateY(-0.1em) scale(1.05);
+      transform: scale(1.05);
     }
 
     &:active {
       opacity: 0.8;
-      transform: translateY(-0.1em) scale(1);
+      transform: scale(1);
     }
   }
 }
