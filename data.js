@@ -2188,4 +2188,9 @@ module.exports = [
     notes:
       'Material fabricated so that it appears to be written or produced by the victims of the propaganda. [PDF](https://www.jstor.org/stable/2086855) e.g. The Protocols of the Elders of Zion is a notoriously fraudulent 1903 work, originally published in Russian, that purported to be written by Jewish people looking to control the world. Courts and scholars labeled it a libelous forgery in the 20th century, but Hitler encountered it and made it a foundation of the Nazis’ big lie against Jewish people.',
   },
+  {
+    title: 'Gell-Mann Amnesia effect',
+    notes:
+      'Micheal Crichton coined the term in a 2002 talk at a think tank. He defined it as the sensation of reading a newspaper story in your field of expertise and finding it littered with errors, then flipping the page and taking for granted that the next article, on a subject you don’t know much about, got things right. “In ordinary life, if somebody consistently exaggerates or lies to you, you soon discount everything they say,” Crichton said. “But when it comes to the media, we believe against evidence that it is probably worth our time to read other parts of the paper. When, in fact, it almost certainly isn’t. The only possible explanation for our behavior is amnesia.”',
+  },
 ]
